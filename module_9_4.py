@@ -8,7 +8,7 @@ print(list(map(compare, first, second)))
 
 def get_advanced_writer(file_name):
     def write_everything(*data_set):
-        file = open(file_name, 'a', encoding="utf-8")
+        file = open(file_name, 'w', encoding="utf-8")
         for i in data_set:
             file.write(f"{str(i)}\n")
         file.close()
