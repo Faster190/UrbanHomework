@@ -53,7 +53,7 @@ class Cafe:
                         table.guest = None
                     else:
                         table.guest = self.q.get()
-                        print(f"{table.guest.name} сел(-а) за стол номер {table.number}")
+                        print(f"{table.guest.name} вышел из очереди и сел(-а) за стол номер {table.number}")
                         table.guest.start()
                 if table.guest is not None:
                     verify = True
