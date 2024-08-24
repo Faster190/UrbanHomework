@@ -36,7 +36,6 @@ class Cafe:
             if verify:
                 print(f"{guest.name} в очереди")
                 self.q.put(guest)
-        print("==End of arrival==")
 
     def discuss_guests(self):
         for table in self.tables:
