@@ -13,10 +13,12 @@ class Example:
 def introspection_info(obj):
     info = {}
     info["type"] = type(obj).__name__
-    if hasattr(obj, "attribute"):
-        info["attributes"] = getattr(obj, "attribute")
-    else:
-        info["attributes"] = "..."
+    attributes = []
+    for attr in dir(obj):
+        att = getattr(obj, attr)
+        if type(att).__name__ != "method-wrapper":
+            attributes.append(attr)
+    info["attributes"] = attributes
     info["methods"] = dir(obj)
     if inspect.getmodule(obj):
         info["module"] = inspect.getmodule(obj).__name__
